@@ -77,7 +77,7 @@ module OmniAuth
 
       def build_access_token
         verifier = request.params['code']
-        client.auth_code.get_access_token(verifier, {:redirect_uri => callback_url}.merge(options))
+        client.auth_code.get_token(verifier, {:redirect_uri => callback_url}.merge(options))
       end
 
       def auth_hash
